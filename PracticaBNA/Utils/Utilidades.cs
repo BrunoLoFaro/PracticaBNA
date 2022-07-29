@@ -13,11 +13,6 @@ namespace PracticaBNA.Utils
             return new Registro(Entrada.ObtenerLinea());
         }
 
-        internal static void ImprimirRegistro(Registro registro)
-        {
-            registro.Imprimir();
-        }
-
         public enum FormatoDeImpresion { ShortFormat, LongFormat }
 
         internal static string ProcesarParametros(string[] parametros)
