@@ -3,12 +3,14 @@ using PracticaBNA.Utils;
 
 namespace PracticaBNA
 {
-    class Program
+    class Programa
     {
         static void Main(string[] args)
         {
+            string formatoDeImpresion = Utilidades.ProcesarParametros(args);
+
             Registro registro = Utilidades.ObtenerRegistro();
-            Utilidades.ImprimirRegistro(registro);
+            Utilidades.ImprimirRegistro(registro, formatoDeImpresion);
             Console.ReadKey();
         }
     }
