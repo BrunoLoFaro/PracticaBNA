@@ -21,24 +21,27 @@ namespace PracticaBNA.Utils
 
         public enum FormatoDeImpresion { ShortFormat, LongFormat }
 
-        internal static string ProcesarParametros(string[] parametros)
+        internal static (string rutaDeArchivo, string formatoDeImpresion)  ProcesarParametros(string[] parametros)
         {
-            string parametroValido = "LongFormat";
+            (string? rutaDeArchivo, string formatoDeImpresion) parametrosValido = (null, FormatoDeImpresion.LongFormat.ToString()); ;
 
-            if (parametros.Length > 1)
-                throw new ArgumentException("1 argument admited.");
+            if (parametros.Length < 1 || parametros.Length > 2)
+                throw new ArgumentException("2 arguments required.");
 
             else
             {
-                if (parametros.Length == 1)
+                if (parametros.Length > 1)
                 {
-                    if (!EsFormatoDeImpresionValido(parametros[0]))
+                    if (!EsFormatoDeImpresionValido(parametros[1]))
                         throw new ArgumentException("Invalid specified format.");
-                    parametroValido = parametros[0];
+                    parametrosValido.formatoDeImpresion = parametros[1];
                 }
+                if (!File.Exists(parametros[0]))
+                    throw new ArgumentException("File not found.");
+                parametrosValido.rutaDeArchivo = parametros[0];
             }
 
-            return parametroValido;
+            return parametrosValido;
         }
 
         internal static bool EsFormatoDeImpresionValido(string format)
