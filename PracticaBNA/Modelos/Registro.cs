@@ -41,6 +41,16 @@ namespace PracticaBNA.Modelos
                 Console.WriteLine(e);
             }
         }
-
+        public void Imprimir()
+        {
+            Console.Write("\nFecha/Hora registro: " +
+                fecha.ToString("yyyy/MM/dd HH:mm:ss") +
+                        "\nTemperatura: " + temperatura + "°" +
+                        "\nHumedad: " + humedad + "%" +
+                        "\nCodigo: " + codigo +
+                        "\nActivo: ");
+            Console.Write(estado == 1 ? "SI" : "NO");
+            Console.Write("\n*********************");
+        }
     }
 }
