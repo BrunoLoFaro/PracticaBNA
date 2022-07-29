@@ -12,7 +12,7 @@ namespace PracticaBNA.Utils
         public enum AlgoritmoDeOrdenamiento { Bubblesort, Delegate, LinQ }
         internal static AlgoritmoDeOrdenamiento ObtenerAlgoritmoDeOrdenamiento()
         {
-            String opcion = "LinQ";
+            string opcion = System.Configuration.ConfigurationManager.AppSettings["AlgoritmoDeOrdenamiento"].ToLower();
             AlgoritmoDeOrdenamiento algoritmo;
             algoritmo = BuscarAlgoritmoDeOrdenamiento(opcion);
             return algoritmo;
