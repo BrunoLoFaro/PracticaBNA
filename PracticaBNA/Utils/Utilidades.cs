@@ -10,7 +10,7 @@ namespace PracticaBNA.Utils
         internal static Registro ObtenerRegistro()
         {
             EntradaDeUsuario Entrada = new EntradaDeUsuario();
-            return new Registro(EntradaDeUsuario.ObtenerLinea());
+            return new Registro(Entrada.ObtenerLinea());
         }
 
         internal static void ImprimirRegistro(Registro registro)
