@@ -11,7 +11,7 @@ namespace PracticaBNA
 
             opciones = Utilidades.ProcesarParametros(args);
 
-            List<Registro> registros = Utilidades.ObtenerRegistros();
+            List<Registro> registros = Utilidades.ObtenerRegistros(opciones.rutaDeArchivo);
 
             Utilidades.ImprimirRegistros(AlgoritmosDeOrdenamiento.Ordenar(registros), opciones.formatoDeImpresion);
             Console.ReadKey();

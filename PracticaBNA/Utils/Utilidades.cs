@@ -7,14 +7,17 @@ namespace PracticaBNA.Utils
 {
     public abstract class Utilidades
     {
-        internal static List<Registro> ObtenerRegistros()
+        internal static List<Registro> ObtenerRegistros(string rutaDeArchivo)
         {
             string linea;
-            EntradaDeUsuario entradaDeUsuario = new EntradaDeUsuario();
+            IEntrada entradaDeArchivo = new EntradaDeArchivo(rutaDeArchivo);
             List<Registro> registros = new List<Registro>();
 
-            while ((linea = entradaDeUsuario.ObtenerLinea()) != null)
+            while ((linea = entradaDeArchivo.ObtenerLinea()) != null)
+            {
+                if(linea.Length==25)
                 registros.Add(new Registro(linea));
+            }
 
             return registros;
         }
