@@ -8,7 +8,7 @@ namespace PracticaBNA
         static void Main(string[] args)
         {
             Registro registro = Utilidades.ObtenerRegistro();
-            Utilidades.ImprimirRegistro(registro);
+            registro.Imprimir();
             Console.ReadKey();
         }
     }

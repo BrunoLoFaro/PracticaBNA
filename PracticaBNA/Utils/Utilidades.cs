@@ -12,11 +12,6 @@ namespace PracticaBNA.Utils
             EntradaDeUsuario Entrada = new EntradaDeUsuario();
             return new Registro(Entrada.ObtenerLinea());
         }
-
-        internal static void ImprimirRegistro(Registro registro)
-        {
-            registro.Imprimir();
-        }
     }
 
 }
