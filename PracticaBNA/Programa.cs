@@ -9,12 +9,23 @@ namespace PracticaBNA
         {
             (string rutaDeArchivo, string formatoDeImpresion) opciones;
 
-            opciones = Utilidades.ProcesarParametros(args);
+            try
+            {
+                opciones = Utilidades.ProcesarParametros(args);
 
-            List<Registro> registros = Utilidades.ObtenerRegistros(opciones.rutaDeArchivo);
+                List<Registro> registros = Utilidades.ObtenerRegistros(opciones.rutaDeArchivo);
 
-            Utilidades.ImprimirRegistros(AlgoritmosDeOrdenamiento.Ordenar(registros), opciones.formatoDeImpresion);
-            Console.ReadKey();
+                Utilidades.ImprimirRegistros(AlgoritmosDeOrdenamiento.Ordenar(registros), opciones.formatoDeImpresion);
+                Console.ReadKey();
+            }
+            catch (FormatException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message, ex.StackTrace, ex?.InnerException);
+            }
         }
     }
 }

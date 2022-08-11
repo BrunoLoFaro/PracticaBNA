@@ -15,7 +15,19 @@ namespace PracticaBNA.Modelos
         public string ObtenerLinea()
         {
             string entrada;
-            entrada = sr.ReadLine();
+            try
+            {
+                entrada = sr.ReadLine();
+            }
+
+            catch (OutOfMemoryException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (IOException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
             if (entrada == null)
                 sr.Close();
             return entrada;
