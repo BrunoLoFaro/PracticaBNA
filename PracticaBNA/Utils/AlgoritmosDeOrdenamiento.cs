@@ -84,7 +84,14 @@ namespace PracticaBNA.Utils
 
         private static List<Registro> OrdenarPorLinq(List<Registro> registros)//no funciona
         {
-            return registros.OrderByDescending(x => x.fecha).ToList();
+            try
+            {
+                return registros.OrderByDescending(x => x.fecha).ToList();
+            }
+            catch (ArgumentNullException e)
+            {
+                throw new ArgumentNullException("No hay registros insertados para ordenar",e);
+            }
         }
     }
 }

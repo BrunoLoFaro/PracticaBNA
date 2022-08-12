@@ -19,7 +19,7 @@ namespace PracticaBNA.Modelos
             {
                 entrada = sr.ReadLine();
             }
-
+            //manejo estas excepciones aca porque son referentes al archivo.
             catch (OutOfMemoryException ex)
             {
                 Console.WriteLine(ex.Message);
