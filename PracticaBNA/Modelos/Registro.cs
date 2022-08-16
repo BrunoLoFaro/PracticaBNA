@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using PracticaBNA.Utils;
 
 namespace PracticaBNA.Modelos
 {
@@ -31,7 +32,7 @@ namespace PracticaBNA.Modelos
                 throw new FormatException("estado debe ser 0 o 1");
         }
 
-        public void Imprimir(string formatoDeImpresion)
+        public void Imprimir(Utilidades.FormatoDeImpresion formatoDeImpresion)
         {
             string output = "";
             if (String.Equals(formatoDeImpresion, "shortformat"))

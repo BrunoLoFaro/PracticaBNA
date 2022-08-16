@@ -7,7 +7,7 @@ namespace PracticaBNA
     {
         static void Main(string[] args)
         {
-            (string rutaDeArchivo, string formatoDeImpresion) opciones;
+            (string rutaDeArchivo, Utilidades.FormatoDeImpresion formatoDeImpresion) opciones;
 
             try
             {
@@ -19,6 +19,14 @@ namespace PracticaBNA
                 Console.ReadKey();
             }
             catch (FormatException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (OutOfMemoryException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            catch (IOException ex)
             {
                 Console.WriteLine(ex.Message);
             }

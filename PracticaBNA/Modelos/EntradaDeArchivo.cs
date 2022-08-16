@@ -14,23 +14,22 @@ namespace PracticaBNA.Modelos
 
         public string ObtenerLinea()
         {
-            string entrada;
             try
             {
+                string entrada;
                 entrada = sr.ReadLine();
+                if (entrada == null)
+                    sr.Close();
+                return entrada;
             }
-            //manejo estas excepciones aca porque son referentes al archivo.
             catch (OutOfMemoryException ex)
             {
-                Console.WriteLine(ex.Message);
+                throw new OutOfMemoryException(ex.Message);
             }
             catch (IOException ex)
             {
-                Console.WriteLine(ex.Message);
+                throw new IOException(ex.Message);
             }
-            if (entrada == null)
-                sr.Close();
-            return entrada;
         }
     }
 }
