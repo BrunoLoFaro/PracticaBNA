@@ -11,14 +11,16 @@ namespace PracticaBNA.Utils
 
         internal static List<Registro> ObtenerRegistros(string rutaDeArchivo)
         {
-            string linea;
+            int linea=0;
+            string entrada;
             IEntrada entradaDeArchivo = new EntradaDeArchivo(rutaDeArchivo);
             List<Registro> registros = new List<Registro>();
 
-            while ((linea = entradaDeArchivo.ObtenerLinea()) != null)
+            while ((entrada = entradaDeArchivo.ObtenerLinea()) != null)
             {
-                if(linea.Length==25)
-                registros.Add(new Registro(linea));
+                if(entrada.Length==25)
+                registros.Add(new Registro(entrada, linea));
+                linea++;
             }
 
             return registros;
