@@ -30,15 +30,11 @@ namespace PracticaBNA.Modelos
         public void Imprimir(Utilidades.FormatoDeImpresion formatoDeImpresion)
         {
             string output = "";
-            if (String.Equals(formatoDeImpresion, "shortformat"))
-            {
+            if (String.Equals(formatoDeImpresion, Utilidades.FormatoDeImpresion.ShortFormat))
                 output += "\nFecha del registro: " + fecha.ToString("yyyy/MM/dd", null) +
                 "\nHora del registro: " + fecha.ToString("HH'Hs':mm'Min':ss'Seg'", null);
-            }
             else
-            {
                 output += "\nFecha/Hora registro: " + fecha.ToString("yyyy/MM/dd HH:mm:ss", null);
-            }
             Console.Write(output +
                         "\nTemperatura: " + temperatura + "°" +
                         "\nHumedad: " + humedad + "%" +

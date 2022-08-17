@@ -2,7 +2,7 @@
   "profiles": {
     "PracticaBNA": {
       "commandName": "Project",
-      "commandLineArgs": "C:\\Users\\vivil\\OneDrive\\Escritorio\\loet.txt"
+      "commandLineArgs": "lote.txt"
     }
   }
 }

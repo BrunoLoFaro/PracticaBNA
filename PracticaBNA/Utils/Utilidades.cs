@@ -1,4 +1,7 @@
 ﻿using PracticaBNA.Modelos;
+using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace PracticaBNA.Utils
 {
@@ -23,7 +26,7 @@ namespace PracticaBNA.Utils
 
         internal static (string rutaDeArchivo, FormatoDeImpresion formatoDeImpresion)  ProcesarParametros(string[] parametros)
         {
-            (string rutaDeArchivo, FormatoDeImpresion formatoDeImpresion) parametrosValido = (null, FormatoDeImpresion.LongFormat); ;
+            (string rutaDeArchivo, FormatoDeImpresion formatoDeImpresion) parametrosValido = (null, FormatoDeImpresion.LongFormat);
 
             if (parametros.Length < 1 || parametros.Length > 2)
                 throw new ArgumentException("Se requieren dos parametros.");
@@ -66,5 +69,4 @@ namespace PracticaBNA.Utils
             }
         }
     }
-
 }
